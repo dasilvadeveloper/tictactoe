@@ -1,0 +1,105 @@
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+  flex-direction: column;
+}
+
+.game .pieces {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  margin: 4rem;
+  justify-items: center;
+  align-items: center;
+  gap: 0px;
+}
+
+.game .piece {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  user-select: none;
+}
+
+/*meio*/
+.game .piece:nth-of-type(4),
+.game .piece:nth-of-type(5),
+.game .piece:nth-of-type(6){
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.game .piece:nth-of-type(2),
+.game .piece:nth-of-type(5),
+.game .piece:nth-of-type(8) {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.game .piece span {
+  font-weight: 100;
+  border: none !important;
+  position: relative;
+}
+
+.game .piece:hover {
+  background-color: rgba(0, 0, 0, 0.054);
+}
+
+.game .horizontal::after {
+  position: absolute;
+  content: "";
+  background: rgb(0, 0, 0);
+  width: 102px;
+  height: 4px;
+  left: 50%;  
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.game .vertical::after {
+  position: absolute;
+  content: "";
+  background: rgb(0, 0, 0);
+  width: 4px;
+  height: 102px;
+  left: 50%;  
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.game .diagonal-2::after {
+  position: absolute;
+  content: "";
+  background: rgb(0, 0, 0);
+  width: 4px;
+  height: 150px;
+  left: 50%;  
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+
+.game .diagonal-1::after {
+  position: absolute;
+  content: "";
+  background: rgb(0, 0, 0);
+  width: 4px;
+  height: 150px;
+  left: 50%;  
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.turn{
+  font-size: 2rem;
+}
